@@ -32,3 +32,27 @@ Constraints:
 1 <= N <= 105
 1 <= arr[i] <= 106
 1 <= K <= 106
+
+
+
+#solution:
+
+#User function template for Python
+
+		# code here
+		#Back-end complete function template for Python
+
+class Solution:	
+	def bin_search(self, arr, left, right, key):
+		if left > right:
+			return -1
+		mid = (left + right) // 2
+		if arr[mid] == key:
+			return mid
+		elif arr[mid] > key:
+			return self.bin_search (arr, left, mid - 1, key)
+		else:
+			return self.bin_search (arr, mid + 1, right, key)
+	
+	def binarysearch(self, arr, n, k):
+		return self.bin_search(arr, 0, n-1, k)
